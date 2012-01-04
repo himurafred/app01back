@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import models.Element;
+import models.ListElement;
 
 public class Accueil extends ControllerParent {
 
@@ -14,7 +15,7 @@ public class Accueil extends ControllerParent {
 
     //Permet de visualiser la liste
     public static void showList(Long idList) {
-    	renderJSON(recupListeElement(idList));
+    	renderJSON(ListElement.findById(idList));
     }
     
     //Permet d'ajouter un élement à la liste
@@ -25,14 +26,11 @@ public class Accueil extends ControllerParent {
     	newEl.setText(textElement);
     	
     	//Ajout dans la base
-    	
+    	ListElement liste = ListElement.findById(idList);
+    	liste.getList().add(newEl);
+    	liste.merge();
     	
     	//On retourne la liste complète
-    	renderJSON(recupListeElement(idList));
-    }
-    
-    
-    private static List<Element> recupListeElement(Long idList){
-    	return new ArrayList<Element>();
+    	renderJSON(liste);
     }
 }

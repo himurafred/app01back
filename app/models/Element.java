@@ -1,20 +1,13 @@
 package models;
 
-public class Element {
+import javax.persistence.Entity;
 
-	//Identifiant de l'élément
-	private Long id;
+import play.db.jpa.Model;
 
+@Entity
+public class Element extends Model{
 	//Description de l'élément
 	private String text;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getText() {
 		return text;

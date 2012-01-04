@@ -1,22 +1,20 @@
 package models;
 import java.util.List;
-public class ListElement {
 
-	//Identifiant de la liste 
-	String id;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+import play.db.jpa.Model;
+@Entity
+public class ListElement extends Model{
 	
 	//Description de la liste
 	String text;
 	
 	//Liste d'élement
+	@OneToMany
 	List<Element> list;
-	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+
 	public String getText() {
 		return text;
 	}
