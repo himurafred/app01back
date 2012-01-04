@@ -6,6 +6,7 @@ import play.db.jpa.Model;
 
 @Entity
 public class Element extends Model{
+	
 	//Description de l'élément
 	private String text;
 

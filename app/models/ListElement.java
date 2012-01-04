@@ -2,18 +2,34 @@ package models;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
 
-import play.db.jpa.Model;
+import play.db.jpa.GenericModel;
 @Entity
-public class ListElement extends Model{
+@Table(name="ListeElement")
+public class ListElement extends GenericModel{
+	
+	@Id
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
+	private String uuid;
 	
 	//Description de la liste
-	String text;
-	
+	private String text;
+		
+	public String getUuid() {
+		return uuid;
+	}
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 	//Liste d'élement
 	@OneToMany
-	List<Element> list;
+	private List<Element> list;
 
 	public String getText() {
 		return text;
