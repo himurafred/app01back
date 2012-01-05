@@ -10,11 +10,8 @@ public class Accueil extends ControllerParent {
 
 	//Permet de créer une nouvelle liste
     public static void createList(String text) {
-    	ListElement newListeElement = new ListElement();
-    	
-    	//Description de la demande
-    	newListeElement.setText(text); 
-    	    	
+    	ListElement newListeElement = new ListElement(text);
+    	    	    	
     	//Enregistrement de la nouvelle Liste
     	newListeElement.save();
     	    	
@@ -30,9 +27,8 @@ public class Accueil extends ControllerParent {
     public static void addElement(String idList, String textElement){
     	
     	//Création du nouvel élément
-    	Element newEl = new Element();
-    	newEl.setText(textElement);
-    	
+    	Element newEl = new Element(textElement);
+    	    	
     	//Ajout dans la base de l'élement
     	newEl.save();
     	

@@ -20,7 +20,11 @@ public class ListElement extends GenericModel{
 	
 	//Description de la liste
 	private String text;
-		
+	
+	public ListElement(String text){
+		this.text = text;
+	}
+	
 	public String getUuid() {
 		return uuid;
 	}
