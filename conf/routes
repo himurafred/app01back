@@ -6,7 +6,7 @@
 GET     /                                       Application.index
 
 PUT		/list									Accueil.createList
-GET		/list{<\w+>idList}						Accueil.showList
+GET		/list/{<\w+>idList}						Accueil.showList
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
