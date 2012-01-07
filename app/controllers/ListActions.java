@@ -36,7 +36,8 @@ public class ListActions extends ControllerParent {
 		ListElement list = ListElement.findById(idList);
 		notFoundIfNull(list);
     	//tmp : renderJSON(list);
-		render(list);
+		List<Element> elements = list.elements;
+		render(list, elements);
     }
     
 }

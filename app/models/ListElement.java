@@ -10,7 +10,7 @@ import org.hibernate.annotations.GenericGenerator;
 import play.db.jpa.GenericModel;
 
 @Entity
-@Table(name="ListeElement")
+//@Table(name="ListeElement")
 public class ListElement extends GenericModel{
 	
 	@Id

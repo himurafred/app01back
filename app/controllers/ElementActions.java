@@ -9,7 +9,7 @@ import play.data.validation.*;
 public class ElementActions extends ControllerParent {
     
     //Permet d'ajouter un élement à la liste
-    public static void addElement(@Required String idList, @Required String textElement){
+    public static void addElement(@Required String idList, @Required String text){
     	Logger.debug("Controller : ElementActions - Method : addElement");
 
 		if(validation.hasErrors()) {
@@ -17,7 +17,7 @@ public class ElementActions extends ControllerParent {
 		}
 		
     	//Création du nouvel élément
-    	Element newEl = new Element(textElement);
+    	Element newEl = new Element(text);
     	    	
     	//Ajout dans la base de l'élement
     	newEl.save();
@@ -29,6 +29,7 @@ public class ElementActions extends ControllerParent {
     	liste.save();
     	
     	//On retourne la liste complète
-    	renderJSON(liste);
+    	//tmp: renderJSON(liste);
+		ListActions.showList(idList);
     }
 }
