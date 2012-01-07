@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'titre' /}
+
+<h2>${list.text}</h2>
+
+#{form @ElementActions.addElement(list.uuid)}
+<label for="idea">Element</label>
+<input type="text" value="" size="30" name="text">
+<input type="submit" value="add">
+#{/form}
+
+<br/>
+
+#{list items:elements, as:'item'}
+	<li>${item.text}</li>
+#{/list}
