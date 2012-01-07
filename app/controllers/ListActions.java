@@ -11,7 +11,7 @@ public class ListActions extends ControllerParent {
 
 	//Permet de créer une nouvelle liste
     public static void createList(@Required String text) {
-		Logger.info("Controller : ListActions - Methode : createList");
+		Logger.debug("Controller : ListActions - Method : createList");
 		
 		if(validation.hasErrors()) {
 			//TODO: Gestion des erreurs : à compléter.
@@ -27,7 +27,7 @@ public class ListActions extends ControllerParent {
 
     //Permet de visualiser la liste
     public static void showList(@Required String idList) {
-		Logger.info("Controller : ListActions - Methode : showList");
+		Logger.debug("Controller : ListActions - Method : showList");
 		
 		if(validation.hasErrors()) {
 			//TODO: Gestion des erreurs : à compléter.

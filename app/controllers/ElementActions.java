@@ -10,7 +10,7 @@ public class ElementActions extends ControllerParent {
     
     //Permet d'ajouter un élement à la liste
     public static void addElement(@Required String idList, @Required String textElement){
-    	Logger.info("Controller : ElementActions - Methode : addElement");
+    	Logger.debug("Controller : ElementActions - Method : addElement");
 
 		if(validation.hasErrors()) {
 			//TODO: Gestion des erreurs : à compléter.
