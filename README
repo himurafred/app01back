@@ -1,2 +1,17 @@
 07/01 - 11h : SL : bon si on veut livrer sur GAE pour la base de données, on ne pourra pas utiliser JPA.
 -> en attendant de décider ce que l'on fait : on livre sur cloudbees ?
+
+A ajouter pour livrer sur cloudbees :
+#Configuration pour cloudbees: 
+bees.api.key=####
+bees.api.secret=#################
+bees.api.domain=######
+bees.api.name=########
+
+# The production deployment information
+%prod.db=java:/comp/env/jdbc/##########
+%prod.db.url=jdbc:cloudbees://################
+%prod.db.driver=com.cloudbees.jdbc.Driver
+%prod.db.user=################
+%prod.db.pass=################
+%prod.jpa.dialect=org.hibernate.dialect.MySQLDialect
