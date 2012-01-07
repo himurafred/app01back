@@ -1,7 +1,7 @@
 # Application dependencies
 
 require:
-    - play 1.2.4
+    - play
     #- play -> gae 1.4
     - play -> cloudbees 0.2.2
     - play -> db 1.1.1
