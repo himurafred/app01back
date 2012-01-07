@@ -22,7 +22,7 @@ public class ListActions extends ControllerParent {
 		//Enregistrement de la nouvelle Liste
     	newListElement.save();
   	    	
-        renderJSON(newListElement.uuid);
+        showList(newListElement.uuid);
     }
 
     //Permet de visualiser la liste
@@ -35,7 +35,8 @@ public class ListActions extends ControllerParent {
 		
 		ListElement list = ListElement.findById(idList);
 		notFoundIfNull(list);
-    	render(list);
+    	//tmp : renderJSON(list);
+		render(list);
     }
     
 }
