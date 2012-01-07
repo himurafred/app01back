@@ -2,6 +2,9 @@
 -> en attendant de décider ce que l'on fait : on livre sur cloudbees ?
 
 A ajouter pour livrer sur cloudbees :
+
+Application.conf :
+
 #Configuration pour cloudbees: 
 bees.api.key=####
 bees.api.secret=#################
@@ -15,3 +18,13 @@ bees.api.name=########
 %prod.db.user=################
 %prod.db.pass=################
 %prod.jpa.dialect=org.hibernate.dialect.MySQLDialect
+
+/war/WEB-INF/cloudbees-web.xml :
+<?xml version="1.0"?>
+<cloudbees-web-app xmlns="http://www.cloudbees.com/xml/webapp/1">
+ <resource name="jdbc/app01back" auth="Container" type="javax.sql.DataSource">
+  <param name="username" value="#################" />
+  <param name="password" value="################" />
+  <param name="url" value="jdbc:cloudbees://#################" />
+ </resource>
+</cloudbees-web-app>
