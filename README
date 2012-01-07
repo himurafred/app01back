@@ -1,2 +1,2 @@
-07/01 - 11h : SL : bon si on veut livrer sur GAE pour la base de donnée, on ne pourra pas utiliser gae.
+07/01 - 11h : SL : bon si on veut livrer sur GAE pour la base de données, on ne pourra pas utiliser JPA.
 -> en attendant de décider ce que l'on fait : on livre sur cloudbees ?
