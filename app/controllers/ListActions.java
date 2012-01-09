@@ -15,10 +15,10 @@ public class ListActions extends ControllerParent {
 		
 		if(validation.hasErrors()) {
 			//TODO: Gestion des erreurs : à compléter.
+			System.out.println("erreur ! ");
 		}
 	
-    	ListElement newListElement = new ListElement(text);    	    	    	
-
+    	ListElement newListElement = new ListElement(text);    	    	    
 		//Enregistrement de la nouvelle Liste
     	newListElement.save();
   	    	
@@ -27,17 +27,19 @@ public class ListActions extends ControllerParent {
 
     //Permet de visualiser la liste
     public static void showList(@Required String idList) {
-		Logger.debug("Controller : ListActions - Method : showList");
+    	Logger.debug("Controller : ListActions - Method : showList");
 		
 		if(validation.hasErrors()) {
 			//TODO: Gestion des erreurs : à compléter.
 		}
 		
 		ListElement list = ListElement.findById(idList);
+	
 		notFoundIfNull(list);
-    	//tmp : renderJSON(list);
+	
+		System.out.println("list : " + list.toString());
+		
 		List<Element> elements = list.elements;
-		render(list, elements);
+		renderResult(list, elements);
     }
-    
 }

@@ -7,10 +7,17 @@ GET     /                                       Application.index
 
 PUT		/list									ListActions.createList
 POST    /list                                   ListActions.createList
-GET		/list/{<\w+>idList}						ListActions.showList
+PUT		/list.{format}							ListActions.createList
+POST    /list.{format}                          ListActions.createList
 
-PUT		/element/{<\w+>idList}/{<\w+>text}		ElementActions.addElement
-POST	/element/{<\w+>idList}/{<\w+>text}		ElementActions.addElement
+GET		/list/{<\w+>idList}						ListActions.showList
+GET		/list/{<\w+>idList}.{format}			ListActions.showList
+
+PUT		/element/{<\w+>idList}/{<\w+>text}				ElementActions.addElement
+POST	/element/{<\w+>idList}/{<\w+>text}				ElementActions.addElement
+PUT		/element/{<\w+>idList}/{<\w+>text}.{format}		ElementActions.addElement
+POST	/element/{<\w+>idList}/{<\w+>text}.{format}		ElementActions.addElement
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
@@ -20,3 +27,4 @@ GET     /public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
+*       /{controller}/{action}.{format}                  {controller}.{action}
