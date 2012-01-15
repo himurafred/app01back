@@ -5,3 +5,5 @@ require:
     #- play -> gae 1.4
     - play -> cloudbees 0.2.2
     - play -> db 1.1.1
+    - play -> cobertura 2.4
+    
