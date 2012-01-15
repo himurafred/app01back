@@ -10,7 +10,7 @@ public class ElementActions extends ControllerParent {
     
     //Permet d'ajouter un élement à la liste
     public static void addElement(@Required String idList, @Required String text){
-    	Logger.debug("Controller : ElementActions - Method : addElement");
+    	Logger.info("Controller : ElementActions - Method : addElement - format : " + request.format);
 
 		if(validation.hasErrors()) {
 			//TODO: Gestion des erreurs : à compléter.
@@ -28,8 +28,9 @@ public class ElementActions extends ControllerParent {
     	liste.elements.add(newEl);
     	liste.save();
     	
-    	//On retourne la liste complète
-    	//tmp: renderJSON(liste);
-		//ListActions.showList(idList);
+    	//On retourne la liste complète		
+		if(!request.format.equals("json")){
+			ListActions.showList(idList);
+		}
     }
 }
