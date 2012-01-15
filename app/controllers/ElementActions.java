@@ -30,6 +30,6 @@ public class ElementActions extends ControllerParent {
     	
     	//On retourne la liste complète
     	//tmp: renderJSON(liste);
-		ListActions.showList(idList);
+		//ListActions.showList(idList);
     }
 }

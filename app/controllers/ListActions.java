@@ -21,8 +21,8 @@ public class ListActions extends ControllerParent {
     	ListElement newListElement = new ListElement(text);    	    	    
 		//Enregistrement de la nouvelle Liste
     	newListElement.save();
-  	    	
-        showList(newListElement.uuid);
+  	    renderJSON(newListElement);	
+        //showList(newListElement.uuid);
     }
 
     //Permet de visualiser la liste
@@ -40,6 +40,7 @@ public class ListActions extends ControllerParent {
 		System.out.println("list : " + list.toString());
 		
 		List<Element> elements = list.elements;
-		renderResult(list, elements);
+		//renderResult(list, elements);
+		renderJSON(list);
     }
 }
