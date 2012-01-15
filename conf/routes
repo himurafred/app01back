@@ -3,28 +3,25 @@
 # ~~~~
 
 # Home page
-GET     /                                       Application.index
+GET     /                                       					Application.index
 
-PUT		/list									ListActions.createList
-POST    /list                                   ListActions.createList
-PUT		/list.{format}							ListActions.createList
-POST    /list.{format}                          ListActions.createList
+PUT		/list.{<json|html>format} 									ListActions.createList(format:${format})
+POST    /list.{<json|html>format}                  					ListActions.createList(format:${format})
+GET		/list/{<\w+>idList}.{<json|html>format} 					ListActions.showList(format:${format})
 
-GET		/list/{<\w+>idList}						ListActions.showList
-GET		/list/{<\w+>idList}.{format}			ListActions.showList
+PUT		/element/{<\w+>idList}/{<\w+>text}							ElementActions.addElement
+POST	/element/{<\w+>idList}/{<\w+>text}							ElementActions.addElement
 
-PUT		/element/{<\w+>idList}/{<\w+>text}				ElementActions.addElement
-POST	/element/{<\w+>idList}/{<\w+>text}				ElementActions.addElement
-PUT		/element/{<\w+>idList}/{<\w+>text}.{format}		ElementActions.addElement
-POST	/element/{<\w+>idList}/{<\w+>text}.{format}		ElementActions.addElement
+PUT		/element/{<\w+>idList}/{<\w+>text}.{<json|html>format}		ElementActions.addElement(format:${format})
+POST	/element/{<\w+>idList}/{<\w+>text}.{<json|html>format}		ElementActions.addElement(format:${format})
 
 
 # Ignore favicon requests
-GET     /favicon.ico                            404
+GET     /favicon.ico                            					404
 
 # Map static resources from the /app/public folder to the /public path
-GET     /public/                                staticDir:public
+GET     /public/                                					staticDir:public
 
 # Catch all
-*       /{controller}/{action}                  {controller}.{action}
-*       /{controller}/{action}.{format}                  {controller}.{action}
+*       /{controller}/{action}                 						{controller}.{action}
+*       /{controller}/{action}.{format}                  			{controller}.{action}
