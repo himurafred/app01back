@@ -5,15 +5,15 @@
 # Home page
 GET     /                                       					Application.index
 
-PUT		/list.{<json|html>format} 									ListActions.createList(format:${format})
-POST    /list.{<json|html>format}                  					ListActions.createList(format:${format})
-GET		/list/{<\w+>idList}.{<json|html>format} 					ListActions.showList(format:${format})
+PUT		/list.{<json|html>format} 									ListActions.createList
+POST    /list.{<json|html>format}                  					ListActions.createList
+GET		/list/{<\w+>idList}.{<json|html>format} 					ListActions.showList
 
 PUT		/element/{<\w+>idList}/{<\w+>text}							ElementActions.addElement
 POST	/element/{<\w+>idList}/{<\w+>text}							ElementActions.addElement
 
-PUT		/element/{<\w+>idList}/{<\w+>text}.{<json|html>format}		ElementActions.addElement(format:${format})
-POST	/element/{<\w+>idList}/{<\w+>text}.{<json|html>format}		ElementActions.addElement(format:${format})
+PUT		/element/{<\w+>idList}/{<\w+>text}.{<json|html>format}		ElementActions.addElement
+POST	/element/{<\w+>idList}/{<\w+>text}.{<json|html>format}		ElementActions.addElement
 
 
 # Ignore favicon requests
