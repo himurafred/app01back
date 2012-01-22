@@ -37,11 +37,11 @@ public class ListActions extends ControllerParent {
 			//TODO: Gestion des erreurs : à compléter.
 			Logger.error("erreur ! ");
 		}
-		
+				
 		ListElement list = ListElement.findById(idList);
 	
 		notFoundIfNull(list);
-	
+		
 		Logger.info("list : " + list.toString());
 		
 		List<Element> elements = list.elements;
@@ -53,5 +53,9 @@ public class ListActions extends ControllerParent {
 		Logger.info("retour groovy");
 		render(list, elements);
 
+    }
+    
+    public static void showAll(){
+    	renderJSON("Liste :" + ListElement.findAll() + "Element : " + Element.findAll());
     }
 }

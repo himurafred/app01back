@@ -15,6 +15,7 @@ POST	/element/{<\w+>idList}/{<\w+>text}							ElementActions.addElement
 PUT		/element/{<\w+>idList}/{<\w+>text}.{<json|html>format}		ElementActions.addElement
 POST	/element/{<\w+>idList}/{<\w+>text}.{<json|html>format}		ElementActions.addElement
 
+GET		/purge/{<\d+>expirationTime}								PurgeActions.execute
 
 # Ignore favicon requests
 GET     /favicon.ico                            					404
