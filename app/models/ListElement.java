@@ -1,5 +1,6 @@
 package models;
 
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +19,9 @@ public class ListElement extends GenericModel{
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	public String uuid;
 	
+	//Date de création de la liste
+	public Date dateCreation;
+	
 	//Description de la liste
 	public String text;
 	
@@ -28,5 +32,6 @@ public class ListElement extends GenericModel{
 	
 	public ListElement(String text){
 		this.text = text;
+		this.dateCreation = new Date();
 	}
 }
