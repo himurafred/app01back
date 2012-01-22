@@ -20,7 +20,7 @@ public class ListElement extends GenericModel{
 	public String uuid;
 	
 	//Date de création de la liste
-	public Date dateCreation;
+	public Date creationDate;
 	
 	//Description de la liste
 	public String text;
@@ -32,6 +32,6 @@ public class ListElement extends GenericModel{
 	
 	public ListElement(String text){
 		this.text = text;
-		this.dateCreation = new Date();
+		this.creationDate = new Date();
 	}
 }
