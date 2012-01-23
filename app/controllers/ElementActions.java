@@ -26,6 +26,9 @@ public class ElementActions extends ControllerParent {
     	ListElement liste = ListElement.findById(idList);
 		notFoundIfNull(liste);
     	liste.elements.add(newEl);
+    	
+    	//On mets à jour la date de MAJ
+    	liste.dateUpdate = new Date();
     	liste.save();
     	
     	//On retourne la liste complète		
