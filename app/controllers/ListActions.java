@@ -54,4 +54,10 @@ public class ListActions extends ControllerParent {
 		render(list, elements);
 
     }
+
+	public static void showAllLists(){
+		List<ListElement> lists = ListElement.find("order by creationDate").fetch();
+		renderJSON(lists);
+	}
+
 }
