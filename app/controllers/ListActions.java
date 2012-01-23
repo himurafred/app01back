@@ -56,7 +56,7 @@ public class ListActions extends ControllerParent {
     }
 
 	public static void showAllLists(){
-		List<ListElement> lists = ListElement.find("order by creationDate").fetch();
+		List<ListElement> lists = ListElement.find("order by dateUpdate").fetch();
 		renderJSON(lists);
 	}
     
