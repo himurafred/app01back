@@ -3,7 +3,10 @@ package controllers;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import models.User;
+
 import play.Play;
+import play.data.validation.Required;
 import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.Http;
@@ -26,13 +29,19 @@ public class ControllerParent extends Controller {
 	}	
 	
 	/**
-	 * Permet de retourner soit du JSON, soit une vue selon la route .
-	 * @param args
+	 * Permet de récupérer le user courant .
+	 * @return
 	 */
-	  protected static void renderResult(Object... args){
-		if("json".equals(request.format)){
-			renderJSON(args);
-		}
-		render(args);
+	public static User getUser(){
+		return SecurityPlugin.getUser();
 	}
+	
+	public static void logout(){
+		SecurityPlugin.logout();
+		renderJSON(true);
+	}
+	
+	public static void login(@Required String username, @Required String password){
+    	renderJSON(SecurityPlugin.authenticate(username, password));
+    }
 }

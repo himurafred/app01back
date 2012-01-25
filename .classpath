@@ -2,9 +2,8 @@
 <classpath>
 	<classpathentry excluding="views/**" kind="src" path="app"/>
 	<classpathentry kind="src" path="test"/>
-	
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/framework/play-1.2.4.jar" sourcepath="/home/himurafred/application_mobile/play/framework/src" />
+	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/framework/play-1.2.4.jar" sourcepath="/home/himurafred/application_mobile/play/framework/src"/>
 	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/framework/lib/geronimo-servlet_2.5_spec-1.2.jar"/>
 	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/framework/lib/jj-textile.jar"/>
 	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/framework/lib/slf4j-log4j12-1.6.1.jar"/>
@@ -79,6 +78,11 @@
 	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/framework/lib/antlr-2.7.6.jar"/>
 	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/framework/lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/framework/lib/mail-1.4.3.jar"/>
-	
+	<classpathentry combineaccessrules="false" kind="src" path="/Authenticate"/>
+	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/modules/cobertura-2.4/lib/asm-3.0.jar"/>
+	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/modules/cobertura-2.4/lib/asm-tree-3.0.jar"/>
+	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/modules/cobertura-2.4/lib/cobertura-main.jar"/>
+	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/modules/cobertura-2.4/lib/jakarta-oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="/home/himurafred/application_mobile/play/modules/cobertura-2.4/lib/play-cobertura.jar"/>
 	<classpathentry kind="output" path="eclipse/classes"/>
 </classpath>
